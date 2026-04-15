@@ -6,7 +6,7 @@ public class GerenciadorSenha
     private string password_One = "Empty"; 
     private string password_Two = "Empty"; 
     private string MasterPassword = "Admin"; 
-public void SavePassword()
+    public void SavePassword()
     {
         Console.WriteLine("\n------------System for save!!------------");
         Console.WriteLine("Hey, you want save your password, nice!\n Now, what's your CPF to login at system?");
