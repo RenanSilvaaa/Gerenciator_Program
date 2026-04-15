@@ -1,0 +1,50 @@
+namespace MeuProjeto;
+
+public class GerenciadorSenha
+{
+
+    private string password_One = "Empty"; 
+    private string password_Two = "Empty"; 
+    private string MasterPassword = "Admin"; 
+public void SavePassword()
+    {
+        Console.WriteLine("\n------------System for save!!------------");
+        Console.WriteLine("Hey, you want save your password, nice!\n Now, what's your CPF to login at system?");
+        Console.WriteLine("CPF: "); 
+        if(int.TryParse(Console.ReadLine(), out int CPF))
+        {
+            
+        }        
+        Console.WriteLine("Do you'll save at space 'one' or 'two'?");
+        string save = (Console.ReadLine() ?? "").Trim().ToLower();
+        if (save == "one")
+        {
+            Console.WriteLine("Type the first password to save: ");
+            password_One = Console.ReadLine() ?? "";
+        }
+        else if (save == "two")
+        
+        {
+            Console.WriteLine("Type the second passWord to save: ");
+            password_Two = Console.ReadLine() ?? "";
+        }
+        else
+        {
+            Console.WriteLine("Sorry, invalid space. ");
+            return;   
+        }
+        Console.WriteLine("Ok, your password are save now on your CPF!");
+    }
+    public void ShowPassword()
+    {
+        Console.WriteLine("Type the MasterPassword: ");
+        if (Console.ReadLine() == MasterPassword)
+        {
+            Console.WriteLine($"P1: {password_One} | P2: {password_Two} ");
+        }
+        else
+        {
+            Console.WriteLine("Denied");
+        }
+    }
+}
