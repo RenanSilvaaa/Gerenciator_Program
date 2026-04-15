@@ -1,0 +1,57 @@
+namespace MeuProjeto;
+class Program
+{
+    static GerenciadorSenha gerenciador = new GerenciadorSenha();
+    static RepositorioProdutos produtos = new RepositorioProdutos();
+    static void Main()
+    {
+        bool executing = true;
+        
+        while(executing)
+        {
+            Console.WriteLine("----------------Gerenciator---------------- ");
+            Console.WriteLine("Do you wanna save some password or consult or items? (You can see your password after save them) ");
+            Console.WriteLine("(1) Save Password ");
+            Console.WriteLine("(2) Consult Items ");
+            Console.WriteLine("(3) Show Passwords ");
+            Console.WriteLine("(4) Clear the chat ");
+            Console.WriteLine("(5) Exit");
+            Console.WriteLine("Option: ");
+            if(int.TryParse(Console.ReadLine(), out int option))
+            {
+                    switch(option)
+                {
+                    case 1: 
+                        gerenciador.SavePassword(); 
+                        Console.Clear();
+                        break;
+                    
+                    case 2: 
+                        produtos.ConsultarEstoque();
+                        break;
+
+                    case 3:
+                        gerenciador.ShowPassword();
+                        break;
+                    case 4:
+                        Console.Clear(); 
+                        break;
+                    
+                    case 5: 
+                        Console.WriteLine("Closing the program...");
+                        executing = false;
+                        break;
+                    
+                    default: 
+                        Console.WriteLine("Invalid option, try again.");
+                        break; 
+                
+                }
+             
+            }
+            
+        }
+    }
+    
+      
+} // Fim da classe Program
